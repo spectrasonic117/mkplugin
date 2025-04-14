@@ -20,6 +20,10 @@ public class CommandUtils {
             throw new IllegalStateException("Plugin instance not set. Call setPlugin() first.");
         }
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
+
+        /* Use
+         * ExecuteCommandUtils.ConsoleCommand("say Hola consola");
+         */
     }
 
     public static void PlayerCommand(Player player, String command) {
@@ -27,5 +31,9 @@ public class CommandUtils {
             throw new IllegalArgumentException("Player cannot be null.");
         }
         player.performCommand(command);
+        
+        /* Use
+         * ExecuteCommandUtils.PlayerCommand(player, "me dice hola");
+         */
     }
 }
