@@ -1,4 +1,4 @@
-package com.spectrasonic.utils;
+package com.spectrasonic.Utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
