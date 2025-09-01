@@ -12,8 +12,9 @@ import java.time.Duration;
 
 public final class MessageUtils {
 
+    private static final JavaPlugin plugin = JavaPlugin.getProvidingPlugin(MessageUtils.class);
     public static final String DIVIDER = "<gray>----------------------------------------</gray>";
-    public static final String PREFIX = "<dark_gray>[<#DD0031>Eventhor </#DD0031><yellow>⚡</yellow>]</dark_gray> <#00aeff>❯</#00aeff> ";
+    public static final String PREFIX = "<gray>[<gold>"+ plugin.getPluginMeta().getName()+"</gold>]</gray> <gold>»</gold> 
 
     // Alert Prefixes
 
