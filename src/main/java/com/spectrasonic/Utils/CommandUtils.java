@@ -1,4 +1,4 @@
-package com.spectrasonic.utils;
+package com.spectrasonic.Utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -21,7 +21,8 @@ public class CommandUtils {
         }
         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
 
-        /* Use
+        /*
+         * Use
          * ExecuteCommandUtils.ConsoleCommand("say Hola consola");
          */
     }
@@ -31,8 +32,9 @@ public class CommandUtils {
             throw new IllegalArgumentException("Player cannot be null.");
         }
         player.performCommand(command);
-        
-        /* Use
+
+        /*
+         * Use
          * ExecuteCommandUtils.PlayerCommand(player, "me dice hola");
          */
     }
