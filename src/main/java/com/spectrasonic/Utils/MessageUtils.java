@@ -14,7 +14,8 @@ public final class MessageUtils {
 
     private static final JavaPlugin plugin = JavaPlugin.getProvidingPlugin(MessageUtils.class);
     public static final String DIVIDER = "<gray>----------------------------------------</gray>";
-    public static final String PREFIX = "<gray>[<gold>"+ plugin.getPluginMeta().getName()+"</gold>]</gray> <gold>»</gold> 
+    public static final String PREFIX = "<gray>[<gold>" + plugin.getPluginMeta().getName()
+            + "</gold>]</gray> <green>»</green> ";
 
     // Alert Prefixes
 
