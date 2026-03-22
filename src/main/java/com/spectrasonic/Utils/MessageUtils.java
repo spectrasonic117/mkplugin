@@ -14,13 +14,12 @@ public final class MessageUtils {
 
     private static final JavaPlugin plugin = JavaPlugin.getProvidingPlugin(MessageUtils.class);
     public static final String DIVIDER = "<gray>----------------------------------------</gray>";
-    public static final String PREFIX = "<gray>[<gold>" + plugin.getPluginMeta().getName()
-            + "</gold>]</gray> <green>»</green> ";
+    public static final String PREFIX = "<gray>[<gold>"+ plugin.getPluginMeta().getName()+"</gold>]</gray> <gold>»</gold> ";
 
     // Alert Prefixes
 
     public static final String CLOSE_PREFIX = "</#9e9893>";
-    public static final String SUCESS_PREFIX = "<green><b>[✔]</b><green> <#9e9893>";
+    public static final String SUCCESS_PREFIX = "<green><b>[✔]</b><green> <#9e9893>";
     public static final String ALERT_PREFIX = "<yellow><b>[!]</b><yellow> <#9e9893>";
     public static final String DENY_PREFIX = "<red><b>[✖]</b><red> <#9e9893>";
     public static final String WARNING_PREFIX = "<red><b>[⚠]</b><red> <#9e9893>";
@@ -37,7 +36,7 @@ public final class MessageUtils {
         sender.sendMessage(miniMessage.deserialize(PREFIX + message));
     }
 
-    public static void noPrefixMessage(CommandSender sender, String message) {
+    public static void rawMessage(CommandSender sender, String message) {
         sender.sendMessage(miniMessage.deserialize(message));
     }
 
@@ -50,20 +49,18 @@ public final class MessageUtils {
                 miniMessage.deserialize(PREFIX + "<#ff003c><b>[x]</b> <#9e9893>Insufficient permissions<#9e9893>"));
     }
 
-    public static void sendOnlyPlayerCommandMessage(CommandSender sender) {
-        Bukkit.getConsoleSender().sendMessage(
+    public static void OnlyPlayerMessage(CommandSender sender) {
                 miniMessage.deserialize(
-                        PREFIX + "<#ff003c><b>[x]</b> <#9e9893>Only players can use this command<#9e9893>"));
+                        PREFIX + "<#ff003c><b>[x]</b> <#9e9893>Only players can use this command<#9e9893>");
     }
 
     public static void configReloadedMessage(CommandSender sender) {
-        Bukkit.getConsoleSender().sendMessage(
-                miniMessage.deserialize(PREFIX + "<green><b>[✔️]</b> <#9e9893>Config Reloaded</#9e9893>"));
+                miniMessage.deserialize(PREFIX + "<green><b>[✔️]</b> <#9e9893>Config Reloaded</#9e9893>");
     }
 
     // Alert Messages
 
-    public static void sucessMessage(CommandSender sender, String message) {
+    public static void successMessage(CommandSender sender, String message) {
         sender.sendMessage(miniMessage.deserialize(SUCESS_PREFIX + message + CLOSE_PREFIX));
     }
 
