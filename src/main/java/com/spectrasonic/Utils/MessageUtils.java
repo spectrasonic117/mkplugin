@@ -61,7 +61,7 @@ public final class MessageUtils {
     // Alert Messages
 
     public static void successMessage(CommandSender sender, String message) {
-        sender.sendMessage(miniMessage.deserialize(SUCESS_PREFIX + message + CLOSE_PREFIX));
+        sender.sendMessage(miniMessage.deserialize(SUCCESS_PREFIX + message + CLOSE_PREFIX));
     }
 
     public static void alertMessage(CommandSender sender, String message) {
