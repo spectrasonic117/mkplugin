@@ -14,7 +14,8 @@ public final class MessageUtils {
 
     private static final JavaPlugin plugin = JavaPlugin.getProvidingPlugin(MessageUtils.class);
     public static final String DIVIDER = "<gray>----------------------------------------</gray>";
-    public static final String PREFIX = "<gray>[<gold>"+ plugin.getPluginMeta().getName()+"</gold>]</gray> <gold>»</gold> ";
+    public static final String PREFIX = "<gray>[<gold>" + plugin.getPluginMeta().getName()
+            + "</gold>]</gray> <gold>»</gold> ";
 
     // Alert Prefixes
 
@@ -50,18 +51,18 @@ public final class MessageUtils {
     }
 
     public static void OnlyPlayerMessage(CommandSender sender) {
-                miniMessage.deserialize(
-                        PREFIX + "<#ff003c><b>[x]</b> <#9e9893>Only players can use this command<#9e9893>");
+        miniMessage.deserialize(
+                PREFIX + "<#ff003c><b>[x]</b> <#9e9893>Only players can use this command<#9e9893>");
     }
 
     public static void configReloadedMessage(CommandSender sender) {
-                miniMessage.deserialize(PREFIX + "<green><b>[✔️]</b> <#9e9893>Config Reloaded</#9e9893>");
+        miniMessage.deserialize(PREFIX + "<green><b>[✔️]</b> <#9e9893>Config Reloaded</#9e9893>");
     }
 
     // Alert Messages
 
     public static void successMessage(CommandSender sender, String message) {
-        sender.sendMessage(miniMessage.deserialize(SUCESS_PREFIX + message + CLOSE_PREFIX));
+        sender.sendMessage(miniMessage.deserialize(SUCCESS_PREFIX + message + CLOSE_PREFIX));
     }
 
     public static void alertMessage(CommandSender sender, String message) {
