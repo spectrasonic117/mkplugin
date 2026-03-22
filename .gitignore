@@ -52,6 +52,7 @@ hs_err_pid*
 .DS_Store
 .AppleDouble
 .LSOverride
+.libs/
 
 # Icon must end with two \r
 Icon
@@ -116,3 +117,11 @@ run/
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
+
+# AI
+plan/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.kilocode/
+.cline/
