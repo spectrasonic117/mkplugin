@@ -444,6 +444,7 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+libs/
 
 ### VisualStudioCode ###
 .vscode/*
@@ -531,3 +532,11 @@ gradle-app.setting
 ### Gradle Patch ###
 # Java heap dump
 *.hprof
+
+# AI
+plan/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.kilocode/
+.cline/
