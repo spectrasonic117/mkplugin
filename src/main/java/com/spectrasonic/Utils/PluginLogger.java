@@ -1,49 +1,61 @@
 package com.spectrasonic.Utils;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 
 import lombok.experimental.UtilityClass;
 
-@SuppressWarnings("deprecation")
 @UtilityClass
 public final class PluginLogger {
 
-    private static void log(ChatColor color, String message) {
+    // Método privado para enviar mensajes con colores usando Adventure API
+    private static void log(NamedTextColor color, String message) {
         if (message == null)
             return;
-        Bukkit.getConsoleSender().sendMessage(color + message);
+
+        Component component = Component.text(message).color(color);
+        Bukkit.getConsoleSender().sendMessage(component);
     }
 
+    // Mensajes informativos (blanco)
     public static void info(String message) {
-        log(ChatColor.WHITE, message);
+        log(NamedTextColor.WHITE, message);
     }
 
+    // Mensajes de éxito (verde)
     public static void success(String message) {
-        log(ChatColor.GREEN, message);
+        log(NamedTextColor.GREEN, message);
     }
 
+    // Mensajes de advertencia (amarillo)
     public static void warning(String message) {
-        log(ChatColor.YELLOW, message);
+        log(NamedTextColor.YELLOW, message);
     }
 
+    // Mensajes de error (rojo)
     public static void error(String message) {
-        log(ChatColor.RED, message);
+        log(NamedTextColor.RED, message);
     }
 
+    // Mensajes de configuración (azul)
     public static void config(String message) {
-        log(ChatColor.BLUE, message);
+        log(NamedTextColor.BLUE, message);
     }
 
+    // Mensajes críticos (rojo oscuro)
     public static void severe(String message) {
-        log(ChatColor.DARK_RED, message);
+        log(NamedTextColor.DARK_RED, message);
     }
 
+    // Mensajes críticos con excepción
     public static void severe(String message, Throwable throwable) {
-        log(ChatColor.DARK_RED, message + ": " + throwable.getMessage());
+        log(NamedTextColor.DARK_RED, message + ": " + throwable.getMessage());
     }
 
+    // Mensajes de depuración (gris)
     public static void fine(String message) {
-        log(ChatColor.GRAY, message);
+        log(NamedTextColor.GRAY, message);
     }
 }
