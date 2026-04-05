@@ -9,12 +9,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.time.Duration;
+import lombok.experimental.UtilityClass;
 
+@UtilityClass
 public final class MessageUtils {
 
     private static final JavaPlugin plugin = JavaPlugin.getProvidingPlugin(MessageUtils.class);
     public static final String DIVIDER = "<gray>----------------------------------------</gray>";
-    public static final String PREFIX = "<gray>[<gold>"+ plugin.getPluginMeta().getName()+"</gold>]</gray> <gold>»</gold> ";
+    public static final String PREFIX = "<gray>[<gold>" + plugin.getPluginMeta().getName()
+            + "</gold>]</gray> <gold>»</gold> ";
 
     // Alert Prefixes
 
@@ -27,10 +30,6 @@ public final class MessageUtils {
     public static final String DEBUG_PREFIX = "<blue><b>[d]</b><blue> <#9e9893>";
 
     private static final MiniMessage miniMessage = MiniMessage.miniMessage();
-
-    private MessageUtils() {
-        // Private constructor to prevent instantiation
-    }
 
     public static void sendMessage(CommandSender sender, String message) {
         sender.sendMessage(miniMessage.deserialize(PREFIX + message));
@@ -50,12 +49,12 @@ public final class MessageUtils {
     }
 
     public static void OnlyPlayerMessage(CommandSender sender) {
-                miniMessage.deserialize(
-                        PREFIX + "<#ff003c><b>[x]</b> <#9e9893>Only players can use this command<#9e9893>");
+        miniMessage.deserialize(
+                PREFIX + "<#ff003c><b>[x]</b> <#9e9893>Only players can use this command<#9e9893>");
     }
 
     public static void configReloadedMessage(CommandSender sender) {
-                miniMessage.deserialize(PREFIX + "<green><b>[✔️]</b> <#9e9893>Config Reloaded</#9e9893>");
+        miniMessage.deserialize(PREFIX + "<green><b>[✔]</b> <#9e9893>Config Reloaded</#9e9893>");
     }
 
     // Alert Messages
