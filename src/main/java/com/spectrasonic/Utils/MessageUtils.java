@@ -9,7 +9,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.time.Duration;
+import lombok.experimental.UtilityClass;
 
+@UtilityClass
 public final class MessageUtils {
 
     private static final JavaPlugin plugin = JavaPlugin.getProvidingPlugin(MessageUtils.class);
@@ -28,10 +30,6 @@ public final class MessageUtils {
     public static final String DEBUG_PREFIX = "<blue><b>[d]</b><blue> <#9e9893>";
 
     private static final MiniMessage miniMessage = MiniMessage.miniMessage();
-
-    private MessageUtils() {
-        // Private constructor to prevent instantiation
-    }
 
     public static void sendMessage(CommandSender sender, String message) {
         sender.sendMessage(miniMessage.deserialize(PREFIX + message));
@@ -56,7 +54,7 @@ public final class MessageUtils {
     }
 
     public static void configReloadedMessage(CommandSender sender) {
-        miniMessage.deserialize(PREFIX + "<green><b>[✔️]</b> <#9e9893>Config Reloaded</#9e9893>");
+        miniMessage.deserialize(PREFIX + "<green><b>[✔]</b> <#9e9893>Config Reloaded</#9e9893>");
     }
 
     // Alert Messages
