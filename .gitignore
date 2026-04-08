@@ -125,3 +125,8 @@ CLAUDE.md
 GEMINI.md
 .kilocode/
 .cline/
+
+.settings/
+.classpath/
+.project/
+.factorypath/
