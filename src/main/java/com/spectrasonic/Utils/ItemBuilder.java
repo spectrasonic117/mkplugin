@@ -11,7 +11,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.HashSet;
 import java.util.Set;
 
-@SuppressWarnings("deprecation")
 public class ItemBuilder {
     private final ItemStack item;
     private final ItemMeta meta;
@@ -43,6 +42,17 @@ public class ItemBuilder {
 
     public ItemBuilder setCustomModelData(int customModelData) {
         meta.setCustomModelData(customModelData);
+        return this;
+    }
+
+    // --- NUEVO MÉTODO PARA ITEM MODEL (1.21.4+) ---
+    public ItemBuilder setItemModel(String itemModelKey) {
+        // Convierte el string "namespace:key" en un objeto NamespacedKey.
+        NamespacedKey key = NamespacedKey.fromString(itemModelKey.toLowerCase());
+        if (key == null) {
+            throw new IllegalArgumentException("Invalid item model key format: " + itemModelKey);
+        }
+        meta.setItemModel(key);
         return this;
     }
 
