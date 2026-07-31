@@ -40,6 +40,7 @@ public class ItemBuilder {
         return this;
     }
 
+    @SuppressWarnings("deprecation")
     public ItemBuilder setCustomModelData(int customModelData) {
         meta.setCustomModelData(customModelData);
         return this;
