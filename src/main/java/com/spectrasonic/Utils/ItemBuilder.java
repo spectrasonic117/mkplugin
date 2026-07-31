@@ -40,6 +40,7 @@ public class ItemBuilder {
         return this;
     }
 
+    @SuppressWarnings("deprecation")
     public ItemBuilder setCustomModelData(int customModelData) {
         meta.setCustomModelData(customModelData);
         return this;
@@ -58,7 +59,9 @@ public class ItemBuilder {
 
     public ItemBuilder addEnchantment(String enchantmentName, int level) {
         String normalized = enchantmentName.toUpperCase().toLowerCase();
-        Enchantment enchantment = Enchantment.getByKey(NamespacedKey.minecraft(normalized));
+        Enchantment enchantment = RegistryAccess.registryAccess()
+                .getRegistry(RegistryKey.ENCHANTMENT)
+                .get(NamespacedKey.minecraft(normalized));
         if (enchantment == null) {
             throw new IllegalArgumentException("Invalid enchantment name: " + enchantmentName);
         }
